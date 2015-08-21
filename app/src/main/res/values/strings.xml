@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">KogiCrono</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <color name="amarillo">#fffeff49</color>
+    <color name="rojo">#ff0000</color>
+    <color name="blanco">#ffffff</color>
+
+
+</resources>

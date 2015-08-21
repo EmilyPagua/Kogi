@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/crono_interf"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/top_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/header_tabs"
+        android:padding="10dip" >
+
+        <TextView
+            android:textColor="#ffff5847"
+            android:background="@drawable/header_tabs"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:text="CRONOMETRO"  />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+                <Chronometer
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="40sp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/cronometro"
+                    android:textStyle="bold"
+                    android:layout_span="3"
+                    android:format="00:00:00:00.000" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+                <Button
+                    android:background="@drawable/button"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Inicio"
+                    android:id="@+id/btInicio"/>
+
+                <Button
+                    android:background="@drawable/button"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pausa"
+                    android:layout_margin="5dp"
+                    android:id="@+id/btPausa" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:background="@drawable/button"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:text="Reset"
+                    android:layout_margin="5dp"
+                    android:id="@+id/btReset"/>
+
+                <Button
+                    android:background="@drawable/button"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:text="Vuelta"
+                    android:layout_margin="5dp"
+                    android:id="@+id/btVuelta" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/tvIntervalo"
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
