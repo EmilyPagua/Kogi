@@ -43,7 +43,6 @@ public class MainActivity extends Activity {
         btReset.setEnabled(false);
         btPausa.setEnabled(false);
 
-
         cronometro.setText("00:00:00.000");
         cronometro.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
@@ -132,29 +131,24 @@ public class MainActivity extends Activity {
      public String convertirFormato (long time){
 
          int h, m, s,ms;
-         h = (int) (time / 3600000); //24
-         m = (int) ((time - h * 3600000) / 60000); //0
-         s = (int) (time - h * 3600000 - m * 60000) / 1000; //0
+         h = (int) (time / 3600000);
+         m = (int) ((time - h * 3600000) / 60000);
+         s = (int) (time - h * 3600000 - m * 60000) / 1000;
          ms = ((int) (time - h * 3600000 - m * 60000 - s * 1000));
 
          if ((h==23) && (m==59) && (s==59))
          {
-            d++;
-            cronometro.setBase(SystemClock.elapsedRealtime());
-         }
-         if (d == 1){
-             cronometro.stop();
-             estado = "inactivo";
-             btInicio.setText("Iniciar");
-             cronometro.setText("00:00:00:00.000");
-             crono_interf.setBackgroundColor(Color.RED);
-             tvIntervalo.setText(null);
-             vuelta = null;
-             timelaps = null;
-             btVuelta.setEnabled(false);
-             btReset.setEnabled(true);
-             btPausa.setEnabled(false);
-             btInicio.setEnabled(false);
+             d++;
+             if (d == 99){
+                 cronometro.stop();
+                 crono_interf.setBackgroundColor(Color.RED);
+                 btVuelta.setEnabled(false);
+                 btReset.setEnabled(true);
+                 btPausa.setEnabled(false);
+                 btInicio.setEnabled(false);
+             }else{
+                 cronometro.setBase(SystemClock.elapsedRealtime());
+             }
          }
 
          String hh = h < 10 ? "0" + h : h + "";
